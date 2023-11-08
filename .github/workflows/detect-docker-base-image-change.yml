@@ -1,4 +1,4 @@
-name: Docker build/publish when base image is updated
+name: Detect docker base image updates
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -15,6 +15,8 @@ jobs:
 
   check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # for Keepalive
     outputs:
       differs: ${{ steps.baseupdatecheck.outputs.differs }}
 
@@ -42,7 +44,7 @@ jobs:
     needs: check
     if: needs.check.outputs.differs == 'true'
     secrets: inherit
-    uses: ./.github/workflows/docker-build-on-push.yml
+    uses: ./.github/workflows/build-docker-image.yml
     permissions:
       contents: read
       packages: write

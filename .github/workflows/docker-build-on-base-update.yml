@@ -9,8 +9,6 @@ on:
   schedule:
     - cron: '15 3 * * *'
   workflow_dispatch:
-permissions:
-  contents: write
 
 
 jobs:
@@ -19,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       differs: ${{ steps.baseupdatecheck.outputs.differs }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

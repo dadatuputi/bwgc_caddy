@@ -78,3 +78,4 @@
 * 2025-07-13 04:07:44 UTC: No change to base image caddy:alpine
 * 2025-07-14 04:10:38 UTC: No change to base image caddy:alpine
 * 2025-07-15 04:07:32 UTC: No change to base image caddy:alpine
+* 2025-07-16 04:06:31 UTC: Base image caddy:alpine updated: linux/amd64

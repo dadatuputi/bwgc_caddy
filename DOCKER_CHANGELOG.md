@@ -213,3 +213,4 @@
 * 2025-11-25 03:55:13 UTC: No change to base image caddy:alpine
 * 2025-11-26 03:54:38 UTC: No change to base image caddy:alpine
 * 2025-11-27 03:50:59 UTC: No change to base image caddy:alpine
+* 2025-11-28 03:50:58 UTC: No change to base image caddy:alpine

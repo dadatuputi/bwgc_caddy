@@ -302,3 +302,4 @@
 * 2026-02-22 04:58:57 UTC: No change to base image caddy:alpine
 * 2026-02-23 05:09:13 UTC: No change to base image caddy:alpine
 * 2026-02-24 05:02:03 UTC: Base image caddy:alpine updated: linux/amd64
+* 2026-02-25 05:03:43 UTC: No change to base image caddy:alpine

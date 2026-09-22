@@ -75,6 +75,9 @@ jobs:
           format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
+          # Pin the scanner itself too. In March 2026, Trivy v0.69.4 to
+          # v0.69.6 were published with a credential stealer.
+          version: 'v0.74.0'
 
       # Upload Trivy scan results to GitHub Security tab
       - name: Upload Trivy scan results to GitHub Security tab
@@ -86,9 +89,9 @@ jobs:
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
         if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@9614fae9e5c5eddabb09f90a270fcb487c9f7149 # v3.3.0
+        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
         with:
-          cosign-release: 'v2.2.2' # optional
+          cosign-release: 'v3.1.3'
 
       # Sign the resulting Docker image digest
       # This will only write to the public Rekor transparency log when the Docker

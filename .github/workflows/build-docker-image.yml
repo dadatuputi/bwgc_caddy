@@ -28,6 +28,13 @@ jobs:
       security-events: write
 
     steps:
+      # github.repository keeps the owner's case, and image references must be
+      # lowercase. metadata-action lowercases the tags it generates, but the
+      # Trivy and cosign steps build the reference from IMAGE_NAME themselves,
+      # so a fork owned by "Striffly" fails with "could not parse reference".
+      - name: Lowercase the image name
+        run: echo "IMAGE_NAME=${IMAGE_NAME,,}" >> "$GITHUB_ENV"
+
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
